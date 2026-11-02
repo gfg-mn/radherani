@@ -1,11 +1,17 @@
-
 jobs = [('A', 2, 100), ('B', 1, 19),
         ('C', 2, 27), ('D', 1, 25), ('E', 3, 15)]
 
-# Sort jobs by profit (descending)
-jobs.sort(key=lambda x: x[2], reverse=True)
+n = len(jobs)
+for i in range(n):
+    for j in range(0, n - i - 1):
+        if jobs[j][2] < jobs[j + 1][2]:   # compare profit (index 2)
+            jobs[j], jobs[j + 1] = jobs[j + 1], jobs[j]
 
-n = max(job[1] for job in jobs)
+max_deadline = 0
+for job in jobs:
+    if job[1] > max_deadline:
+        max_deadline = job[1]
+
 slots = [None] * n
 profit = 0
 
