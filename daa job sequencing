@@ -1,0 +1,20 @@
+
+jobs = [('A', 2, 100), ('B', 1, 19),
+        ('C', 2, 27), ('D', 1, 25), ('E', 3, 15)]
+
+# Sort jobs by profit (descending)
+jobs.sort(key=lambda x: x[2], reverse=True)
+
+n = max(job[1] for job in jobs)
+slots = [None] * n
+profit = 0
+
+for job in jobs:
+    for j in range(job[1]-1, -1, -1):
+        if slots[j] is None:
+            slots[j] = job[0]
+            profit += job[2]
+            break
+
+print("Scheduled Jobs:", [j for j in slots if j])
+print("Maximum Profit:", profit)
