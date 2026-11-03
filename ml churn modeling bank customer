@@ -23,3 +23,6 @@ pred = model.predict(X_test)
 
 print('Accuracy:', accuracy_score(y_test, pred))
 print('Confusion Matrix:\n', confusion_matrix(y_test, pred))
+
+
+#https://www.kaggle.com/barelydedicated/bank-customer-churn-modeling
