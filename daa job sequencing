@@ -4,7 +4,7 @@ jobs = [('A', 2, 100), ('B', 1, 19),
 n = len(jobs)
 for i in range(n):
     for j in range(0, n - i - 1):
-        if jobs[j][2] < jobs[j + 1][2]:   # compare profit (index 2)
+        if jobs[j][2] < jobs[j + 1][2]:
             jobs[j], jobs[j + 1] = jobs[j + 1], jobs[j]
 
 max_deadline = 0
